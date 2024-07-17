@@ -1,0 +1,29 @@
+{
+  "name": "base_server",
+  "version": "1.0.0",
+  "description": "This creates base server for your project handling all your custom routes with default basic routes.",
+  "main": "baseServer.js",
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text-summary --all=true mocha tests/*.test.js --exit"
+  },
+  "author": "Vinay Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "8.9.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-prettier": "4.0.0",
+    "glob": "10.4.2",
+    "mocha": "10.4.0",
+    "nyc": "17.0.0"
+  },
+  "dependencies": {
+    "@zetwerk/zet-service-registry": "1.9.0-alpha.25",
+    "cors": "2.8.5",
+    "express": "4.19.2",
+    "kafkajs": "2.2.4",
+    "node-schedule": "2.1.1",
+    "yargs": "17.7.2"
+  }
+}

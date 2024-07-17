@@ -1,0 +1,21 @@
+{
+  "name": "testapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "start-kafka": "nodemon index.js --mode=kafka",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "base_server": "file:../Base_Server",
+    "cors": "2.8.5",
+    "express": "4.19.2",
+    "moment": "2.30.1",
+    "yargs": "17.7.2"
+  }
+}

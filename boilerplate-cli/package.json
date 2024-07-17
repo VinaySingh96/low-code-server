@@ -1,0 +1,21 @@
+{
+  "name": "boilerplate-cli",
+  "version": "1.0.0",
+  "description": "This is the cli tool which helps in creating modules, packages utilizing our base-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "boilerplate-cli": "./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@clack/prompts": "0.7.0",
+    "chalk": "4.1.2",
+    "commander": "12.1.0",
+    "generate-template-files": "3.2.1",
+    "inquirer": "8.2.6"
+  }
+}

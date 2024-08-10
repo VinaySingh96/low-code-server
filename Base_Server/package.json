@@ -1,5 +1,5 @@
 {
-  "name": "base_server",
+  "name": "@VinaySingh96/base_server",
   "version": "1.0.0",
   "description": "This creates base server for your project handling all your custom routes with default basic routes.",
   "main": "baseServer.js",

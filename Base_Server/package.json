@@ -6,6 +6,9 @@
   "scripts": {
     "test": "nyc --reporter=html --reporter=text-summary --all=true mocha tests/*.test.js --exit"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/@VinaySingh96"
+  },
   "author": "Vinay Singh",
   "license": "ISC",
   "devDependencies": {

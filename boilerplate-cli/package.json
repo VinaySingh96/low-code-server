@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-cli",
+  "name": "@vinaysingh96/boilerplate-cli",
   "version": "1.0.0",
   "description": "This is the cli tool which helps in creating modules, packages utilizing our base-server",
   "main": "index.js",

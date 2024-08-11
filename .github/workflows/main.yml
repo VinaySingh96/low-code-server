@@ -20,5 +20,10 @@ jobs:
         run: |
           npm install
           npm publish
+      - name: Install dependencies and publish cli tool
+        working-directory: boilerplate-cli
+        run: |
+          npm install
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

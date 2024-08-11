@@ -1,29 +1,29 @@
-name: Node.js Package
+# name: Node.js Package
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
 
-jobs:
-  publish-gpr:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: '@VinaySingh96'
-      - name: Install dependencies and publish
-        working-directory: Base_Server
-        run: |
-          npm install
-          npm publish
-      - name: Install dependencies and publish cli tool
-        working-directory: boilerplate-cli
-        run: |
-          npm install
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+# jobs:
+#   publish-gpr:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: 12
+#           registry-url: https://npm.pkg.github.com/
+#           scope: '@VinaySingh96'
+#       - name: Install dependencies and publish
+#         working-directory: Base_Server
+#         run: |
+#           npm install
+#           npm publish
+#       - name: Install dependencies and publish cli tool
+#         working-directory: boilerplate-cli
+#         run: |
+#           npm install
+#           npm publish
+#         env:
+#           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { validatePhoneNumber, validateEmail } = require('../../../constants/validators');
 
 const userSchema = new mongoose.Schema(
   {
@@ -22,14 +23,19 @@ const userSchema = new mongoose.Schema(
     },
     phoneNumber: {
       type: Number,
-      minlength: 10,
       required: true,
       unique: true,
-      // TODO: validate phone number
+      validate: {
+        validator: validatePhoneNumber,
+        message: props => `${props.value} is not a valid phone number! It must start with 7, 8, or 9 and contain exactly 10 digits.`
+      }
     },
     email: {
       type: String,
-      // TODO: validate email
+      validate: {
+        validator: validateEmail,
+        message: props => `${props.value} is not a valid email.`
+      }
     },
     skills: {
       programmingLanguages: {

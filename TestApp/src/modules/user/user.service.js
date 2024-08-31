@@ -10,7 +10,20 @@ class UserService extends EntityService{
   }
 
   async createEntityPostHook(result, params, query, headers) {
-    await KafkaService.sendMessage('testTopic', `Message From Server!`);
+    const data = {
+      type: 'User Create',
+      data: result._doc
+    }
+    await KafkaService.sendMessage(
+      'testTopic',
+      JSON.stringify(data)
+    );
+    // await KafkaService.sendMessage({
+    //   topic: 'testTopic',
+    //   messages: [{
+    //     value: JSON.stringify(data)
+    //   }]
+    // });
     return result
   }
 }

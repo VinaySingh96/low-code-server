@@ -16,7 +16,7 @@ class KafkaService extends BaseService {
     })
   }
 
-  async initConsumer() {
+  async initConsumer(cron = false) {
     this.consumer = this.kafka.consumer({ groupId: this.config.kafka.groupId });
     await this.consumer.connect();
     for (const topic of this.config.kafka.topics)
@@ -25,8 +25,14 @@ class KafkaService extends BaseService {
     await this.consumer.run({
       eachMessage: async ({ topic, partition, message }) => {
         try {
-          const KafkaConsumer = require.main.require('./src/modules/kafka/KafkaConsumer');
-          KafkaConsumer.handleIncomingMessage(topic, message.value.toString());
+          if (cron){
+            const { handleKafkaMessage } = require('../cronRunner');
+            handleKafkaMessage(topic, message.value.toString());
+          }
+          else {
+            const KafkaConsumer = require.main.require('./src/modules/kafka/KafkaConsumer');
+            KafkaConsumer.handleIncomingMessage(topic, message.value.toString());
+          }
         } catch (error) {
           console.error(error);
         }

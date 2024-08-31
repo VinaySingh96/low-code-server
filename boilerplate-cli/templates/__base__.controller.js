@@ -5,7 +5,7 @@ class __name__Controller extends BaseController {
   constructor(){
     super();
     this.routePrefix = '__name__KebabCase__';
-    // Bind the methods to the class instance
+    // Bind the methods to the class instance cuz it does not extends Entity Controller
     bindMethods(__name__Controller.prototype, this);
   }
 

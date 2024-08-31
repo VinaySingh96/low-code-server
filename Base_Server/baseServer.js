@@ -33,14 +33,19 @@ async function initServer({ config, mode }) {
       try {
         const producer = await KafkaService.initProducer();
         if(producer) console.log('Kafka producer started successfully! 📡')
-        } catch (error) {
+      } catch (error) {
         console.log('Unable to start kafka producer -- ', error)
       }
       startServer({ port: 8001, app });
       return app;
     
     case 'kafka':
-      KafkaService.initConsumer();
+      try {
+        KafkaService.initConsumer();
+        console.log('Kafka consumer started! 🎤');
+      } catch (error) {
+        console.log('Error while starting kafka consumer :- ', error);
+      }
 
   }
 }

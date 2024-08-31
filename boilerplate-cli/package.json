@@ -1,13 +1,13 @@
 {
   "name": "@vinaysingh96/boilerplate-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is the cli tool which helps in creating modules, packages utilizing our base-server",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/@VinaySingh96"
+    "registry":"https://npm.pkg.github.com/@VinaySingh96/low-code-server"
   },
   "bin": {
     "boilerplate-cli": "./index.js"

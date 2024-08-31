@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "start-kafka": "nodemon index.js --mode=kafka",
+    "start-cron-job": "nodemon src/jobs/cronJob.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@vinaysingh96/base_server": "file:../../../Base_Server",
     "base_server": "file:../Base_Server",
     "cors": "2.8.5",
     "express": "4.19.2",

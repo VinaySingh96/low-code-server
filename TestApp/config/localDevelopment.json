@@ -4,7 +4,8 @@
     "brokers": ["localhost:9092"],
     "groupId": "test-kafka2",
     "topics": [
-      "testTopic"
+      "testTopic",
+      "cronJob"
     ]
   }
 }
